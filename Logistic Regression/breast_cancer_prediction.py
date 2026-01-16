@@ -61,3 +61,15 @@ class_labels= (test_prediction>=0.5).astype(int)
 print(class_labels)
 
 
+accuracy = np.mean(class_labels == test_target)
+
+true_positive = np.sum((class_labels == 1) & (test_target == 1))
+false_positive = np.sum((class_labels == 1) & (test_target == 0))
+false_negative = np.sum((class_labels == 0) & (test_target == 1))
+
+precision = true_positive / (true_positive + false_positive + 1e-9)
+recall = true_positive / (true_positive + false_negative+ 1e-9)
+
+print("Accuracy:", accuracy)
+print("Precision:", precision)
+print("Recall:", recall)
