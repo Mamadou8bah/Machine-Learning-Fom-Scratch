@@ -49,6 +49,15 @@ for i in range(number_of_iterations):
     theta -= learning_rate * gradient
     prev_cost = train_cost
 
-print(train_prediction)
 
-print("Cost",train_cost)
+print("Cost:", train_cost)
+
+test_z = test_features @ theta
+test_z =np.clip(test_z, -500,500)
+test_prediction= 1/(1+ np.exp(-test_z))
+
+class_labels= (test_prediction>=0.5).astype(int)
+
+print(class_labels)
+
+
