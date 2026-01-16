@@ -28,7 +28,7 @@ std = np.std(train_features[:, 1:], axis=0)
 train_features[:, 1:] = (train_features[:, 1:] - mean) / std
 test_features[:, 1:] = (test_features[:, 1:] - mean) / std
 
-learning_rate = 0.001
+learning_rate = 0.2
 prev_cost = float('inf')
 number_of_iterations = 2000
 tolerance = 0.0001
