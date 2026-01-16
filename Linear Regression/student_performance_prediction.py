@@ -3,9 +3,6 @@ import numpy as np
 
 
 student_performance = pd.read_csv('student-mat.csv', sep=';')
-
-
-
 all_features=student_performance.iloc[:,:-1]
 target = student_performance.iloc[:, -1:].to_numpy().flatten()
 
